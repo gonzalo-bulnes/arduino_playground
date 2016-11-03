@@ -140,6 +140,23 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+## rosserial specific steps
+#
+# See http://wiki.ros.org/rosserial_arduino/Tutorials/CMake
+
+rosserial_generate_ros_lib(
+  PACKAGE rosserial_arduino
+  SCRIPT make_libraries.py
+)
+
+rosserial_configure_client(
+  DIRECTORY firmware
+  TOOLCHAIN_FILE ${ROSSERIAL_ARDUINO_TOOLCHAIN}
+)
+
+rosserial_add_client_target(firmware main ALL)
+rosserial_add_client_target(firmware main-upload)
+
 #############
 ## Install ##
 #############
