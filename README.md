@@ -31,6 +31,11 @@ catkin_make sensor_gp2y0a02yk_firmware_main
 # Upload the firmware to the arduino
 catkin_make sensor_gp2y0a02yk_firmware_main-upload
 ```
+
+This project is configured following the ROS tutorial: [CMake with rosserial_arduino][cmake-rosserial-arduino].
+
+  [cmake-rosserial-arduino]: http://wiki.ros.org/rosserial_arduino/Tutorials/CMake
+
 #### Usage
 
 ```bash
@@ -51,3 +56,31 @@ rostopic echo chatter
 1. Measure and trace a characteristic: output voltage [V] = f(distance [m])
 1. Add calibration data and compute distance values
 1. Publish `sensor_msgs/Range` messages to the `/scan` topic
+
+
+Credits
+-------
+
+This project is based on code published as part of the [ROS Wiki][ros-wiki] under the terms of the [Creative Commons Attribution 3.0][cc-by-3.0] license.
+
+  [ros-wiki]: http://wiki.ros.org/rosserial_arduino/Tutorials/CMake
+  [cc-by-3.0]: https://creativecommons.org/licenses/by/3.0/
+
+License
+-------
+
+    Arduino Playground
+    Copyright (C) 2016 Gonzalo Bulnes Guilpain
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
