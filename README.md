@@ -46,17 +46,22 @@ roscore
 rosrun rosserial_python serial_node.py /dev/ttyACM0
 
 # In a third terminal listen to the Arduino topic
-rostopic echo chatter
+rostopic echo /raw_data
 ```
 
 #### Roadmap
 
 1. Determine when to start measuring and how to properly timestamp measurement data
-1. Publish raw voltage values to the `/raw_voltage` topic
+1. Publish raw measurement data to the `/raw_data` topic (4.9mV/unit as per the [Arduino documentation][analogRead])
 1. Measure and trace a characteristic: output voltage [V] = f(distance [m])
 1. Add calibration data and compute distance values
 1. Publish `sensor_msgs/Range` messages to the `/scan` topic
 
+  [analogRead]: https://www.arduino.cc/en/Reference/AnalogRead
+
+#### Documentation
+
+See [`src/sensor_gp2y0a02yk/doc/`](src/sensor_gp2y0a02yk/doc/) for details.
 
 Credits
 -------

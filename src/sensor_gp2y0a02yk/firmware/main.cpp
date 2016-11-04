@@ -1,25 +1,44 @@
+/* 
+ * rosserial IR Ranger Example  
+ * 
+ * This example is calibrated for the Sharp GP2D120XJ00F.
+ */
+
 #include <ros.h>
-#include <std_msgs/String.h>
+#include <ros/time.h>
+#include <std_msgs/Int16.h>
 
-#include <Arduino.h>
+/* Sensor typical response time in milliseconds */
+const int TYPICAL_RESPONSE_TIME_MILLIS = 39;
 
-ros::NodeHandle nh;
+ros::NodeHandle  nh;
+std_msgs::Int16 output;
+ros::Publisher pub_range( "raw_data", &output);
 
-std_msgs::String str_msg;
-ros::Publisher chatter("chatter", &str_msg);
+const int analog_pin = 0;
+unsigned long range_timer;
 
-char hello[13] = "hello world!";
+/*
+ * getRange() - samples the analog input from the ranger.
+ */
+float getRange(int pin_num){
+  return analogRead(pin_num);
+}
 
 void setup()
 {
   nh.initNode();
-  nh.advertise(chatter);
+  nh.advertise(pub_range);
 }
 
 void loop()
 {
-  str_msg.data = hello;
-  chatter.publish( &str_msg );
+  // publish the voltage value every 39 milliseconds
+  //   since it takes that long for the sensor to stabilize
+  if ( (millis()-range_timer) > TYPICAL_RESPONSE_TIME_MILLIS){
+    output.data = getRange(analog_pin);
+    pub_range.publish(&output);
+    range_timer =  millis();
+  }
   nh.spinOnce();
-  delay(1000);
 }
