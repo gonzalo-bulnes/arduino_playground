@@ -1,7 +1,9 @@
 /* 
- * rosserial IR Ranger Example  
+ * rosserial IR Ranger
  * 
- * This example is calibrated for the Sharp GP2D120XJ00F.
+ * This example is calibrated for the Sharp GP2Y0A02YK, and
+ * is inspired in the ROS Wiki rosserial IR Ranger example.
+ * See http://wiki.ros.org/rosserial_arduino/Tutorials/IR%20Ranger
  */
 
 #include <ros.h>
