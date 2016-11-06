@@ -43,7 +43,7 @@ This project is configured following the ROS tutorial: [CMake with rosserial_ard
 roscore
 
 # In a second terminal start a Python client for rosserial
-rosrun rosserial_python serial_node.py /dev/ttyACM0
+roslaunch src/sensor_gp2y0a02yk/getting_started.launch
 
 # In a third terminal listen to the Arduino topic
 rostopic echo /raw_data
