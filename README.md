@@ -8,9 +8,12 @@ A space for small, exploratory [Arduino][arduino] projects.
 Sensors
 -------
 
-### Sharp GP2Y0A02YK and GP2Y0A710K0F
+### Sharp GP2Y0A02YK
 
-An Arduino-based driver for two Sharp Infrared distance sensors (IR rangers), to be used as part of a [ROS][ros] robot.
+[![ROS Version](https://img.shields.io/badge/ROS-Kinetic-blue.svg)](http://wiki.ros.org/kinetic)
+![Package Version](https://img.shields.io/badge/GP2Y0A02YK%20Driver-0.1.0-brightgreen.svg)
+
+An Arduino-based driver for a Sharp Infrared distance sensor (IR ranger), to be used as part of a [ROS][ros] robot.
 
 **Note**: The instructions below a [_Desktop-Full Install_][ros-setup] of ROS Kinectic Kame is available.
 
