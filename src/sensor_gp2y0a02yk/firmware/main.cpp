@@ -23,7 +23,7 @@ unsigned long range_timer;
 /*
  * getRange() - samples the analog input from the ranger.
  */
-float getRange(int pin_num){
+int getRange(int pin_num){
   return analogRead(pin_num);
 }
 
