@@ -14,8 +14,8 @@
 const int TYPICAL_RESPONSE_TIME_MILLIS = 39;
 
 ros::NodeHandle  nh;
-std_msgs::Int16 output;
-ros::Publisher pub_range( "raw_data", &output);
+std_msgs::Int16 raw_output;
+ros::Publisher pub_range( "raw_data", &raw_output);
 
 const int analog_pin = 0;
 unsigned long range_timer;
@@ -38,8 +38,8 @@ void loop()
   // publish the voltage value every 39 milliseconds
   //   since it takes that long for the sensor to stabilize
   if ( (millis()-range_timer) > TYPICAL_RESPONSE_TIME_MILLIS){
-    output.data = getRange(analog_pin);
-    pub_range.publish(&output);
+    raw_output.data = getRange(analog_pin);
+    pub_range.publish(&raw_output);
     range_timer =  millis();
   }
   nh.spinOnce();
