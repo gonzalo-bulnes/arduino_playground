@@ -71,8 +71,13 @@ Credits
 
 This project is based on code published as part of the [ROS Wiki][ros-wiki] under the terms of the [Creative Commons Attribution 3.0][cc-by-3.0] license.
 
+The [GP2Y0A02YK datasheet][datasheet-copy] was created by Callahan, is believed to be property of Sharp, and is only included here for reference ([original PDF][datasheet-original]). The separate annotations are not part of the original datasheet and correspond to [this repository author][me] measurements.
+
   [ros-wiki]: http://wiki.ros.org/rosserial_arduino/Tutorials/CMake
   [cc-by-3.0]: https://creativecommons.org/licenses/by/3.0/
+  [datasheet-copy]: ./src/sensor_gp2y0a02yk/doc/
+  [datasheet-original]: http://docs-asia.electrocomponents.com/webdocs/0a71/0900766b80a71447.pdf
+  [me]: https://github.com/gonzalo-bulnes
 
 License
 -------
