@@ -49,7 +49,7 @@ roscore
 roslaunch src/sensor_gp2y0a02yk/getting_started.launch
 
 # In a third terminal listen to the Arduino topic
-rostopic echo /raw_data
+rostopic echo /scan
 ```
 
 #### Roadmap
