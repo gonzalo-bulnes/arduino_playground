@@ -37,10 +37,18 @@ int getRawData(int pin_num){
  * getDistance() - converts the raw ranger data to a distance.
  */
 float getDistance(int raw_data){
+  float a, b;
+  float point_a[2] = { 1/1.5, 72 };
+  float point_b[2] = { 1/0.3, 338 };
+  float point_c[2] = { 1/0.2, 505 };
+  float point_d[2] = { 1/0.15, 553 };
+
   if (raw_data < 72){
     return INFINITY;
   } else if (raw_data >= 72 && raw_data < 338){
-    return 0.9;
+    b = (point_b[1] - point_a[1]) / (point_b[0] - point_a[0]);
+    a = point_a[1] - (b * point_a[0]);
+    return b/(raw_data - a);
   } else if (raw_data >= 338 && raw_data < 505){
     return 0.25;
   } else if (raw_data >= 505 && raw_data < 553){
