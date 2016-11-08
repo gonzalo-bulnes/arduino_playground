@@ -50,9 +50,13 @@ float getDistance(int raw_data){
     a = point_a[1] - (b * point_a[0]);
     return b/(raw_data - a);
   } else if (raw_data >= 338 && raw_data < 505){
-    return 0.25;
+    b = (point_c[1] - point_b[1]) / (point_c[0] - point_b[0]);
+    a = point_b[1] - (b * point_b[0]);
+    return b/(raw_data - a);
   } else if (raw_data >= 505 && raw_data < 553){
-    return 0.17;
+    b = (point_d[1] - point_c[1]) / (point_d[0] - point_c[0]);
+    a = point_c[1] - (b * point_c[0]);
+    return b/(raw_data - a);
   } else {
     return NAN;
   }
