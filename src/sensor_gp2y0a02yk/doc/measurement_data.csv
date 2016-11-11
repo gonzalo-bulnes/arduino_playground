@@ -1,0 +1,38 @@
+Characteristic of a Sharp GP2Y0A02YK sensor attached to an Arduino UNO board.
+
+Power supply: the Arduino is powered by its USB connection, the sensor is connected to the Arduino 5V power pin.
+Measurements: raw_output is read from the Arduino analog input pin, V_o is measured with a mutimeter. Note that the calibre of the multimeter was changed at 120cm to increase precision, and that the V_o data is provided for reference only (the Arduino readings are though to be more reliable that the multimeter ones).
+
+
+distance [cm], raw_output (4.9mV/unit), V_o [V] (measured), V_o (datasheet)
+---------------------------------------------------------------------------
+5, 358, 1.54, 
+10, 481, 2.06, 2.30
+15, 553, 2.37, 2.75
+20, 505, 2.17, 2.54
+25, 448, 1.92, -
+30, 388, 1.67, 2.00
+35, 334, 1.43, -
+40, 293, 1.15, 1.54
+45, 262, 1.02, -
+50, 235, 0.92, 1.23
+55, 210, 0.82, -
+60, 195, 0.77, 1.05
+65, 180, 0.70, -
+70, 164, 0.64, 0.90
+75, 155, 0.61, -
+80, 147, 0.58, 0.81
+85, 134, 0.53, -
+90, 127, 0.51, 0.72
+95, 122, 0.48, -
+100, 115, 0.45, 0.65
+105, 107, 0.42, -
+110, 103, 0.41, 0.60
+115, 98, 0.38, -
+120, 95, 0.445, 0.55
+125, 90, 0.428, -
+130, 84, 0.403, 0.51
+135, 80, 0.384, -
+140, 78, 0.388, 0.48
+145, 74, 0.370, -
+150, 72, 0.345, 0.45
